@@ -1,0 +1,118 @@
+<html>
+<head>
+    <title>Income & Tax Planner</title>
+</head>
+
+<body>
+    <div id="mainDiv" class="mainDiv split left">
+        <form class="inputForm" id="inputForm" onsubmit="return false">
+            <div class="inputDiv">
+                <table id="formTable" class="formTable">
+                    <tbody>
+                        <tr>
+                            <td><b>Please Enter your details below</b></td>
+                        </tr>
+                        <tr>
+                                <td><br/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="ctc">CTC Per Annum</label></td>
+                            <td><input type="number" id="ctc" defaultValue="0" placeholder="0"></td>
+                        </tr>
+                        <tr>
+                            <td><br/></td>
+                        </tr>
+                        <tr>
+                            <td><b>Please add your Investment details below</b></td>
+                        </tr>
+                        <tr>
+                            <td><br/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="investmentInputs">
+                    <div id="case1">
+                        <table>
+                            <tbody> 
+                                <tr>
+                                    <td>
+                                    <b>Case 1</b> 
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table>
+                            <tbody>
+                                    <tr>
+                                        <td><label for="PF">PF Contribution</label> </td>
+                                        <td>
+                                            <select id="pfOption1" onchange="populatePF(1,this.value)">
+                                            <option name="default" value="0">Default - 1800 per month</option>
+                                            <option name="percentWise" value="1">12% of Basic Salary </option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <label for="pfDeduction" id="pfDeduction1" class="pfDeduction">21600</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="HRA">HRA</label> </td>
+                                        <td><input type="number" id="hra1" class="hra" defaultValue="0" placeholder="0"></td>
+                                    </tr>
+                                    <tr>
+                                            <td><label for="Home Loan Interest">Home Loan Interest</label> </td>
+                                            <td><input type="number" id="homeLoan1" class="homeLoan" defaultValue="0" placeholder="0"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="Home Loan Principal">Home Loan Principal</label> </td>
+                                        <td><input type="number" id="homeLoanPrincipal1" class="homeLoanPrincipal" defaultValue="0" placeholder="0"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="Flexible Benefit Plan">Flexible Benefit Plan</label> </td>
+                                        <td><input type="number" id="fbp" class="fbp" defaultValue="0" placeholder="0"></td>
+                                    </tr>
+                                    <tr>
+                                            <td><label for="Other Investments">Other Investments<b>( For tax exemption)</b></label> </td>
+                                            <td><input type="number" id="otherInvestment1" class="otherInvestment" defaultValue="0" placeholder="0"></td>
+                                    </tr>
+                                    <tr>
+                                            <td><br/></td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="newCaseButton">
+                            <button id="newCase" onclick="addNewCase(); return false;" > Add New Case</button>
+                            <br/><br/>
+                    </div>
+
+                    <div id="submit" >
+                        <button class="submit" onclick="processInput(); return false;">Compare All</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="result split right">
+        <table id="resultTable" border="2px" cellpadding="10">
+            <thead id ="result_attr">
+                <td><b>Case.No</b></td>
+                <td><b>Yearly take home</b></td>
+                <td><b>Monthly take home </b></td>
+                <td><b>Total tax per year</b></td>
+                <td><b>Total savings in PF per year</b></td>
+                <td><b>Total investments</b></td>
+            </thead>
+        </table>
+    </div>
+
+</body>
+
+<script src="script.js"></script>
+<link rel="stylesheet" href="styles.css" />
+
+</html>

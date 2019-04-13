@@ -1,0 +1,20 @@
+.split{
+    position: absolute;
+    z-index: 1;
+    padding-top: 20px;
+}
+
+.left{
+    left: 0;
+}
+
+.right{
+    right: 0;
+}
+
+.submit{
+    background-color:#0095ff;
+    color:white;
+    align-self: center;
+    size: 2in;
+}
